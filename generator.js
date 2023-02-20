@@ -1,5 +1,7 @@
-const perChar = ['Honest', 'Brave', 'Compassionate', 'Leader', 'Courageous', 'Unselfish', 'Loyal', 'Hard-working', 'Independent', 'Selfish', 'Responsible', 'Considerate', 'Self-confident', 'Humble'];
-const fortune = ['Beware of the blinding red light. If you see this light, you must flee. It will only bring you death!',
+
+const messages = {
+	perChar: ['Honest', 'Brave', 'Compassionate', 'Leader', 'Courageous', 'Unselfish', 'Loyal', 'Hard-working', 'Independent', 'Selfish', 'Responsible', 'Considerate', 'Self-confident', 'Humble'],
+	fortune: ['Beware of the blinding red light. If you see this light, you must flee. It will only bring you death!',
 	'You will find the answer to a long, mysterious riddle in your family bloodline buried between two oak trees, west of the village you grew up in.',
 	'A path of death lies in your wake.',
 	'Greed is a poor man’s compass, and I see gold and riches in your future.',
@@ -98,10 +100,10 @@ const fortune = ['Beware of the blinding red light. If you see this light, you m
 	'An ancient empire will rise from the waves along with ancient secrets.',
 	'Only when the lovers are reunited can the curse be broken.',
 	'As the hermit emerges from hiding, darkness shall soon emerge as well.',
-	'Watch for a nobleman in red, for he is a devil in disguise.'];
+	'Watch for a nobleman in red, for he is a devil in disguise.'],
    
 
-	const kindness = [ 'Pay it Backward: buy coffee for the person behind you in line.',
+	kindness: ['Pay it Backward: buy coffee for the person behind you in line.',
 		 'Compliment the first three people you talk to today.',
 		 'Send a positive text message to five different people right now.',
 		 'Post inspirational sticky notes around your neighborhood, office, school, etc.',
@@ -151,18 +153,17 @@ const fortune = ['Beware of the blinding red light. If you see this light, you m
 		 'Put your phone away while in the company of others.',
 		 'Email or write to a former teacher who made a difference in your life.',
 		 'When you hear that discouraging voice in your head, tell yourself something positive. You deserve kindness too!']
-	 
+	}
 
 function generateMessage() {
-	const yourChar = Math.floor(Math.random() * perChar.length);
-	const yourFortune = Math.floor(Math.random() * fortune.length);
-	const yourKindness = Math.floor(Math.random() * kindness.length);
+	const yourChar = Math.floor(Math.random() * [messages.perChar.length]);
+	const yourFortune = Math.floor(Math.random() * [messages.fortune.length]);
+	const yourKindness = Math.floor(Math.random() * [messages.kindness.length]);
 
-	console.log(yourChar);
-	console.log(yourFortune);
-	console.log(yourKindness);
+console.log('Your Quality trait: ' + messages.perChar[yourChar]);
+console.log(' ');
+console.log('Your fotuune: ' + messages.fortune[yourFortune]);
+console.log(' ');
+console.log('Words of advice: ' + messages.kindness[yourKindness]);
+}
 
-console.log(perChar[yourChar]);
-console.log(fortune[yourFortune]);
-console.log(kindness[yourKindness]);
-};
